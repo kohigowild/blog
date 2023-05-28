@@ -2,6 +2,7 @@ import React, { FunctionComponent } from 'react'
 import styled from '@emotion/styled'
 import PostItem from 'components/Main/PostItem'
 import { PostListItemType } from 'types/PostItem.types'
+import { IGatsbyImageData } from 'gatsby-plugin-image'
 
 export type PostType = {
   node: {
@@ -12,7 +13,9 @@ export type PostType = {
       date: string
       categories: string[]
       thumbnail: {
-        publicURL: string
+        childImageSharp: {
+          gatsbyImageData: IGatsbyImageData
+        }
       }
     }
   }
